@@ -1,9 +1,5 @@
-import React, { Fragment } from 'react'
+import React, { Fragment } from "react";
 
 export const Header = () => {
-  return (
-    <Fragment>
-       Task Planner
-    </Fragment>
-  )
-}
+  return <Fragment>Task Planner</Fragment>;
+};

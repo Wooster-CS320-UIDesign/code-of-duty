@@ -14,14 +14,15 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export  const DatePickers = ()  => {
+export  const DatePickers = (props)  => {
+  console.log(props.captureDate)
   const classes = useStyles();
 
   return (
-    <form className={classes.container} noValidate>
-      <TextField
+    <form className={classes.container} noValidate onChange={props.captureDate}>
+      <TextField 
         id="date"
-        label="Birthday"
+        label="Date"
         type="date"
         defaultValue="2017-05-24"
         className={classes.textField}

@@ -8,10 +8,12 @@ export default class AddTask extends Component {
 
     console.log(this.props)
   }
+
   render() {
     return (
       <div>
-        <MyModal handleClickOpen={this.props.whenOpened} modalIsOpen={this.props.modalIsOpen} handleClose={this.props.whenClosed}/>
+        
+      <MyModal handleClickOpen={this.props.whenOpened} modalIsOpen={this.props.modalIsOpen} handleClose={this.props.whenClosed} captureTaskName={this.props.captureTaskName} capturePriority={this.props.capturePriority} captureNotes={this.props.captureNotes} captureDate={this.props.captureDate} captureLocation={this.props.captureLocation}  closeButDoNothing={ this.props.closeButDoNothing} taskName={this.props.taskName}/>
       </div>
     )
   }

@@ -32,7 +32,12 @@ export class App extends Component {
         //   priority: "Low",
         //   notes: "do it ASAP",
         // },
-        // { name: "Study for Cs 320", priority: "High", notes: "do it ASAP" },
+        // {
+        //   name: "Study for Cs 320",
+        //   priority: "High",
+        //   notes: "do it ASAP",
+        //   location: "Kauke Hall",
+        // },
       ],
       // taskObject: {
       //   date: "",
@@ -74,6 +79,7 @@ export class App extends Component {
         priority: this.state.highPriority,
         date: this.state.date,
         notes: `${this.state.notes}`,
+        location: this.state.location,
       });
       this.setState({ modalIsOpen: false });
       this.state.modalIsOpen = false;
@@ -81,7 +87,6 @@ export class App extends Component {
     };
 
     this.closeButDoNothing = () => {
-      console.log("yessir");
       this.setState({ modalIsOpen: false });
     };
 
@@ -164,7 +169,9 @@ export class App extends Component {
       this.setState({ location: location });
     };
     this.clearAllTasks = () => {
-      this.setState({ allTasks: [] });
+      if (window.confirm("Are you sure you want to remove all tasks?")) {
+        this.setState({ allTasks: [] });
+      }
     };
   }
   render() {
@@ -185,11 +192,15 @@ export class App extends Component {
                 captureNotes={this.captureNotes}
                 capturePriority={this.capturePriority}
                 captureDate={this.captureDate}
+                captureLocation={this.captureLocation}
                 closeButDoNothing={this.closeButDoNothing}
                 taskName={this.state.currentTaskName}
               />
             </div>
-            <div className="col-3 ">
+            <div
+              className="col-3 pr-1"
+              style={{ display: "flex", justifyContent: "flex-end" }}
+            >
               <div
                 className="btn btn-sm btn-danger"
                 onClick={this.clearAllTasks}
@@ -199,6 +210,7 @@ export class App extends Component {
             </div>
           </div>
         </div>
+
         <div className=" pl-2 mt-4">
           <MyTasks
             allTasks={this.state.allTasks}

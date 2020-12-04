@@ -13,7 +13,6 @@ export const Navbar = () => {
         ></img>
         <Header />
       </a>
-      <a href="#">About This App</a>
     </div>
   );
 };

@@ -19,7 +19,7 @@ export default class TaskItem extends Component {
   }
   render() {
     return (
-      <div className=" m-2 py-3">
+      <div className=" m-2 py-4">
         <div
           className="row"
           style={{
@@ -76,6 +76,14 @@ export default class TaskItem extends Component {
                         <b>None</b>
                       ) : (
                         <b>{this.props.notes}</b>
+                      )}
+                    </p>
+                    <p>
+                      Location:{" "}
+                      {this.props.location === "" ? (
+                        <b>None</b>
+                      ) : (
+                        <b>{this.props.location}</b>
                       )}
                     </p>
                   </Typography>

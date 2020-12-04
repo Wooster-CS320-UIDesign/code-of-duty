@@ -25,9 +25,9 @@ export class MyModal extends Component {
     return (
       <div>
         <div
-          className="btn btn-block text-white"
+          className="btn btn-block text-white mb-1"
           onClick={this.props.handleClickOpen}
-          style={{ backgroundColor: "#6495ED" }}
+          style={{ backgroundColor: "#330066" }}
         >
           Add Task
         </div>
@@ -126,6 +126,7 @@ export class MyModal extends Component {
                     className="mt-2 mb-3"
                     label="Location"
                     fullWidth="true"
+                    onChange={this.props.captureLocation}
                   />
                 </div>
               </div>
